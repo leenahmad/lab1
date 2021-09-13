@@ -1,7 +1,7 @@
-import React from "react";
-import HornedBeasts from "./HornedBeasts";
-import ImgArr from "./data.json";
-import Row from "react-bootstrap/Row";
+import React from 'react';
+import HornedBeasts from './HornedBeasts';
+import ImgArr from './data.json';
+import Row from 'react-bootstrap/Row';
 
 class Main extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class Main extends React.Component {
               <HornedBeasts
                 key={index}
                 title={element.title}
-                image_url={element.image_url}
+                image_url={element.image_url} alt={element.alt}
                 description={element.description}
                 keyword={element.keyword}
                 horns={element.horns}
