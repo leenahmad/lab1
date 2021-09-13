@@ -1,24 +1,20 @@
 import React from "react";
 import Header from "./components/Header";
 // import Main from "./components/Main";
-import Gallery from "./components/Gallery"
+import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
 
-
-class App extends React.Component{
-  render(){
+class App extends React.Component {
+  render() {
     return (
       <>
-         <Header/>
+        <Header />
 
-         <Gallery/>
-        
-         <Footer/>
-          
+        <Gallery />
+
+        <Footer />
       </>
-
-    )
+    );
   }
-  
 }
 export default App;
