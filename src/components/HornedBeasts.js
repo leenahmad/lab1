@@ -27,7 +27,7 @@ class HornedBeasts extends React.Component {
 
           <Card.Text>Votes {this.state.vote}</Card.Text>
 
-          <button class="text-center" onClick={this.increaseVote} type="button" className="btn btn-outline-danger">vote</button>
+          <button className="text-center" onClick={this.increaseVote} type="button" className="btn btn-outline-danger">vote</button>
         </Card.Body>
       </Card>
     );
