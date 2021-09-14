@@ -1,37 +1,63 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
 
-
-class HornedBeasts extends React.Component {
+class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      vote: 0,
+      numOfClicks: 0,
     };
   }
 
-  increaseVote = () => {
+  increaseNumberOfClicks = () => {
     this.setState({
-      vote: this.state.vote + 1,
+      numOfClicks: this.state.numOfClicks + 1,
     });
+  };
+
+  openModal = () => {
+    this.props.openModal(this.props.slectbeast);
   };
 
   render() {
     return (
-      <Card style={{ width: '18rem'}}>
-        <Card.Title>{this.props.title}</Card.Title>
-        <img src={this.props.image_url} alt={this.props.keyword} width={200} />
-        <Card.Body>
-          <Card.Text>{this.props.description}</Card.Text>
-
-          <Card.Text>Votes {this.state.vote}</Card.Text>
-
-          <button className="text-center" onClick={this.increaseVote} type="button" className="btn btn-outline-danger">vote</button>
-        </Card.Body>
-      </Card>
+      <>
+        <Col>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img
+              className="cardhorned"
+              variant="top"
+              src={this.props.image_url}
+              alt={this.props.keyword}
+              style={{ height: "250px" }}
+            />
+            <Card.Body>
+              <Card.Title>{this.props.title}</Card.Title>
+              <Card.Text>Number of Pets {this.state.numOfClicks}</Card.Text>
+              <Button onClick={this.increaseNumberOfClicks} type="button" class="btn btn-danger" variant="primary">
+                vote here
+              </Button>
+              <Button
+                onClick={this.openModal}
+                slectbeast={this.props.slectbeast}
+                title={this.props.title}
+                image_url={this.props.image_url}
+                alt={this.props.keyword}
+                description={this.props.description}
+                type="button" class="btn btn-danger"
+                variant="primary"
+              >
+                modals
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </>
     );
   }
 }
 
-export default HornedBeasts;
+export default HornedBeast;
