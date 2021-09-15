@@ -7,32 +7,42 @@ class HorendForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: 0,
+      selcted: 0,
       Form: 0,
     };
   }
-  form = (event) => {
+  submit = async (event) => {
     event.preventDefault();
-    this.setState({
-      selected: event.target.breed.value,
+    await this.setState({
+      leen: event.target.opt.value,
     });
-    console.log(this.selected);
+    console.log(this.state.leen);
+  };
+
+  openForm = () => {
+    this.props.form(this.props.horns);
   };
 
   render() {
     return (
       <>
-        <Form.Label></Form.Label>
-        <Form.Select name="breed" aria-label="Default select example">
-          <option>Open this select horns beast</option>
-          <option value="angora">1</option>
-          <option value="persian">2</option>
-          <option value="baldi">3</option>
-          <option value="baldi">WOW</option>
-        </Form.Select>
-        <Button form={this.props.horns} variant="primary" type="submit">
-          Submit
-        </Button>
+        <Form onSubmit={this.submit}>
+          <Form.Label></Form.Label>
+          <Form.Select aria-label="Default select example" name="opt">
+            <option>Open this select horns beast</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="WOW">WOW</option>
+          </Form.Select>
+          <Button
+            // form={this.props.horns}
+            variant="primary"
+            type="submit"
+          >
+            Submit
+          </Button>
+        </Form>
       </>
     );
   }
