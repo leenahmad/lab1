@@ -14,6 +14,7 @@ class Main extends React.Component {
               return (
                 <HornedBeast
                   model={this.props.model}
+                  form={this.props.form}
                   selectedBeast={element.displayImg}
                   key={index}
                   title={element.title}

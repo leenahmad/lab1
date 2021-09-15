@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import SelectedBeast from "./components/SelectedBeast";
 import assest from "./components/data.json";
+import HorendForm from "./components/HornedForm";
 
 class App extends React.Component {
   constructor(props) {
@@ -15,17 +16,19 @@ class App extends React.Component {
       title: " ",
       image_url: " ",
       description: " ",
+      horns: " ",
+      form: 0,
     };
   }
-  model = (title, image_url, description) =>
+  model = (title, image_url, description, horns) =>
     this.setState({
-      selectedBeast :this.model,
+      selectedBeast: this.model,
       title: title,
       image_url: image_url,
       description: description,
+      horns: horns,
       isOpen: true,
     });
- 
 
   openModal = (selectedBeast) => {
     console.log(selectedBeast);
@@ -33,21 +36,37 @@ class App extends React.Component {
   };
   closeModal = () => this.setState({ isOpen: false });
 
+  form = (horns) => {
+    this.setState({
+      selectedBeast: this.form,
+      Form: Number(horns),
+      horns: horns,
+      isOpen: true,
+    });
+  };
+
   render() {
     return (
       <>
         <Header />
-        <Main asses={assest} openModal={this.openModal} model={this.model} />
+        <HorendForm />
+        <Main
+          asses={assest}
+          openModal={this.openModal}
+          model={this.model}
+          form={this.form}
+        />
         <Footer />
         <SelectedBeast
           isOpen={this.state.isOpen}
-          model = {this.model}
+          model={this.model}
           closeModal={this.closeModal}
           selectedBeast={this.state.selectedBeast}
           title={this.state.title}
           image_url={this.state.image_url}
           alt={this.state.keyword}
           description={this.state.description}
+          horns={this.props.horns}
         />
       </>
     );
