@@ -13,6 +13,7 @@ class Main extends React.Component {
             {displayImg.map((element, index) => {
               return (
                 <HornedBeast
+                  model={this.props.model}
                   selectedBeast={element.displayImg}
                   key={index}
                   title={element.title}
