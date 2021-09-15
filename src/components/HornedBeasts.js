@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
+
 class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
@@ -22,7 +23,7 @@ class HornedBeast extends React.Component {
     this.props.model(
       this.props.title,
       this.props.image_url,
-      this.props.description
+      this.props.description,
     );
   };
 
@@ -40,6 +41,7 @@ class HornedBeast extends React.Component {
             />
             <Card.Body>
               <Card.Title>{this.props.title}</Card.Title>
+              <Card.Title>{this.props.horns}</Card.Title>
               <Card.Text>Number of Pets {this.state.numOfClicks}</Card.Text>
               <Button
                 onClick={this.increaseNumberOfClicks}
@@ -48,8 +50,7 @@ class HornedBeast extends React.Component {
                 variant="primary"
               >
                 vote here
-              </Button> {' '}
-
+              </Button>{" "}
               <Button
                 onClick={this.openModal}
                 slectbeast={this.props.slectbeast}
@@ -57,6 +58,7 @@ class HornedBeast extends React.Component {
                 image_url={this.props.image_url}
                 alt={this.props.keyword}
                 description={this.props.description}
+                horns={this.props.horns}
                 type="button"
                 class="btn btn-danger"
                 variant="primary"
@@ -72,3 +74,4 @@ class HornedBeast extends React.Component {
 }
 
 
+export default HornedBeast;
