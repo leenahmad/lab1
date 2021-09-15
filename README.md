@@ -78,3 +78,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Finish time: __7 pm ___  css take time
 
 ### Actual time needed to complete: __hour and half___
+
+
+
+
+
+### Number and name of feature: ___Model_______
+
+### Estimate of time needed to complete: __6 hours and above___
+
+### Start time: ___2 pm___
+
+### Finish time: __8 pm ___  css take time
+
+### Actual time needed to complete: __6 hours and above__
