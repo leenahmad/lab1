@@ -19,7 +19,11 @@ class HornedBeast extends React.Component {
   };
 
   openModal = () => {
-    this.props.openModal(this.props.slectbeast);
+    this.props.model(
+      this.props.title,
+      this.props.image_url,
+      this.props.description
+    );
   };
 
   render() {
@@ -37,9 +41,15 @@ class HornedBeast extends React.Component {
             <Card.Body>
               <Card.Title>{this.props.title}</Card.Title>
               <Card.Text>Number of Pets {this.state.numOfClicks}</Card.Text>
-              <Button onClick={this.increaseNumberOfClicks} type="button" class="btn btn-danger" variant="primary">
+              <Button
+                onClick={this.increaseNumberOfClicks}
+                type="button"
+                class="btn btn-danger"
+                variant="primary"
+              >
                 vote here
-              </Button>
+              </Button> {' '}
+
               <Button
                 onClick={this.openModal}
                 slectbeast={this.props.slectbeast}
@@ -47,7 +57,8 @@ class HornedBeast extends React.Component {
                 image_url={this.props.image_url}
                 alt={this.props.keyword}
                 description={this.props.description}
-                type="button" class="btn btn-danger"
+                type="button"
+                class="btn btn-danger"
                 variant="primary"
               >
                 modals
