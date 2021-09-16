@@ -13,10 +13,11 @@ class HorendForm extends React.Component {
   }
   submit = async (event) => {
     event.preventDefault();
+    this.props.horn(event.target.horn.value);
     await this.setState({
-      leen: event.target.opt.value,
+      horns: event.target.horn.value,
     });
-    console.log(this.state.leen);
+    console.log(this.state.horns);
   };
 
   openForm = () => {
@@ -28,12 +29,12 @@ class HorendForm extends React.Component {
       <>
         <Form onSubmit={this.submit}>
           <Form.Label></Form.Label>
-          <Form.Select aria-label="Default select example" name="opt">
+          <Form.Select aria-label="Default select example" name="horn">
             <option>Open this select horns beast</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
-            <option value="WOW">WOW</option>
+            <option value="100">WOW</option>
           </Form.Select>
           <Button
             // form={this.props.horns}
