@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -16,7 +15,7 @@ class App extends React.Component {
       title: " ",
       image_url: " ",
       description: " ",
-      horns: " ",
+      horns: assest,
       form: 0,
     };
   }
@@ -45,13 +44,23 @@ class App extends React.Component {
     });
   };
 
+  horn = (numberOfhorns) => {
+    let filterHorns = [];
+    filterHorns = assest.filter((elemnt) => elemnt.horns == numberOfhorns);
+    console.log(filterHorns);
+
+    this.setState({
+      horns: filterHorns,
+    });
+  };
+
   render() {
     return (
       <>
         <Header />
-        <HorendForm />
+        <HorendForm horn={this.horn} />
         <Main
-          asses={assest}
+          asses={this.state.horns}
           openModal={this.openModal}
           model={this.model}
           form={this.form}

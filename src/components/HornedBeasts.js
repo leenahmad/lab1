@@ -4,7 +4,6 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
-
 class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +22,7 @@ class HornedBeast extends React.Component {
     this.props.model(
       this.props.title,
       this.props.image_url,
-      this.props.description,
+      this.props.description
     );
   };
 
@@ -72,6 +71,5 @@ class HornedBeast extends React.Component {
     );
   }
 }
-
 
 export default HornedBeast;
