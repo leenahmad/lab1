@@ -46,6 +46,7 @@ class App extends React.Component {
 
   horn = (numberOfhorns) => {
     let filterHorns = [];
+    // eslint-disable-next-line eqeqeq
     filterHorns = assest.filter((elemnt) => elemnt.horns == numberOfhorns);
     console.log(filterHorns);
 
