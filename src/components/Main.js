@@ -1,6 +1,6 @@
 import React from "react";
 import HornedBeast from "./HornedBeasts";
-// import displayImg from "./data.json";
+import displayImg from "./data.json";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 
@@ -9,8 +9,8 @@ class Main extends React.Component {
     return (
       <div>
         <Card>
-          <Row xs={1} md={4} className="g-4">
-            {this.props.asses.map((element, index) => {
+          <Row xs={1} md={4} class="g-4">
+            {displayImg.map((element, index) => {
               return (
                 <HornedBeast
                   model={this.props.model}
@@ -25,7 +25,7 @@ class Main extends React.Component {
                   openModal={this.props.openModal}
                 />
               );
-            })}
+            })};
           </Row>
         </Card>
       </div>
