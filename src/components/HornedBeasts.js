@@ -59,7 +59,6 @@ class HornedBeast extends React.Component {
                 description={this.props.description}
                 horns={this.props.horns}
                 type="button"
-                class="btn btn-danger"
                 variant="primary"
               >
                 modals

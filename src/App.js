@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import SelectedBeast from "./components/SelectedBeast";
-import assest from "./components/data.json";
+import data from "./components/data.json";
 import HorendForm from "./components/HornedForm";
 
 class App extends React.Component {
@@ -11,11 +11,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      selectedBeast: assest[0],
+      selectedBeast: data[0],
       title: " ",
       image_url: " ",
       description: " ",
-      horns: assest,
+      data: data,
       form: 0,
     };
   }
@@ -31,7 +31,7 @@ class App extends React.Component {
 
   openModal = (selectedBeast) => {
     console.log(selectedBeast);
-    this.setState({ isOpen: true, selectedBeast: assest[selectedBeast] });
+    this.setState({ isOpen: true, selectedBeast: data[selectedBeast] });
   };
   closeModal = () => this.setState({ isOpen: false });
 
@@ -46,11 +46,12 @@ class App extends React.Component {
 
   horn = (numberOfhorns) => {
     let filterHorns = [];
-    filterHorns = assest.filter((elemnt) => elemnt.horns == numberOfhorns);
+    // eslint-disable-next-line eqeqeq
+    filterHorns = data.filter((elemnt) => elemnt.horns == numberOfhorns);
     console.log(filterHorns);
 
     this.setState({
-      horns: filterHorns,
+     data: filterHorns,
     });
   };
 
@@ -60,7 +61,7 @@ class App extends React.Component {
         <Header />
         <HorendForm horn={this.horn} />
         <Main
-          asses={this.state.horns}
+          data={this.state.data}
           openModal={this.openModal}
           model={this.model}
           form={this.form}
