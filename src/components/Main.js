@@ -1,16 +1,17 @@
 import React from "react";
 import HornedBeast from "./HornedBeasts";
-import displayImg from "./data.json";
+// import displayImg from "./data.json";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 
 class Main extends React.Component {
   render() {
+    console.log(this.props.data)
     return (
       <div>
         <Card>
           <Row xs={1} md={4} class="g-4">
-            {displayImg.map((element, index) => {
+            {this.props.data.map((element, index) => {
               return (
                 <HornedBeast
                   model={this.props.model}
